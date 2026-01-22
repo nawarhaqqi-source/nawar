@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سحبة الدكتورة أطياف حسن</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root { 
+            --main-bg: #ffffff; 
+            --text-dark: #333333; 
+            --accent-red: #e63946; 
+            --accent-gold: #b8860b;
+            --input-bg: #f9f9f9;
+            --facebook-color: #1877F2;
+            --instagram-grad: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            --tiktok-color: #000000;
+        }
+        
+        body { background: #f0f2f5; color: var(--text-dark); font-family: 'Tajawal', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 15px; box-sizing: border-box; }
+        .container { background: var(--main-bg); padding: 30px 25px; border-radius: 20px; width: 100%; max-width: 400px; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border: 1px solid #eee; }
+        .header-box { background: var(--accent-red); color: white; padding: 14px; border-radius: 12px; font-weight: bold; margin-bottom: 25px; font-size: 1.1rem; box-shadow: 0 4px 10px rgba(230, 57, 70, 0.2); }
+        
+        .page { display: none; }
+        .page.active { display: block; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .social-links { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+        .social-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; border-radius: 12px; text-decoration: none; font-size: 0.95rem; font-weight: bold; color: white; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .social-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); opacity: 0.9; }
+        .fb-btn { background-color: var(--facebook-color); grid-column: span 2; }
+        .ig-btn { background: var(--instagram-grad); }
+        .tk-btn { background-color: var(--tiktok-color); }
+        
+        .welcome-box { background: var(--input-bg); padding: 20px; border-radius: 15px; margin-bottom: 20px; border: 1px solid #eee; line-height: 1.6; }
+        .form-group { text-align: right; margin-bottom: 18px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; font-size: 0.9rem; }
+        input, select { width: 100%; padding: 14px; border-radius: 10px; border: 1px solid #ddd; background: var(--input-bg); font-family: 'Tajawal'; box-sizing: border-box; font-size: 1rem; outline: none; }
+        input:focus { border-color: var(--accent-red); }
+        
+        .btn { background: var(--accent-red); color: white; border: none; padding: 16px; width: 100%; border-radius: 12px; font-weight: bold; cursor: pointer; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3); transition: 0.3s; }
+        .btn:hover:not(:disabled) { background: #d63031; transform: scale(1.02); }
+        .btn:disabled { background: #ccc; cursor: not-allowed; }
+
+        .serial-box { background: #fff5f5; border: 2px dashed var(--accent-red); padding: 15px; border-radius: 12px; margin: 20px 0; }
+        .serial-number { font-size: 1.8rem; font-weight: bold; color: var(--accent-red); display: block; margin-top: 5px; letter-spacing: 2px; }
+        .highlight { color: var(--accent-red); font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-box">مبادرة الدكتورة أطياف حسن محمد</div>
+
+    <div id="step1" class="page active">
+        <h2 style="margin-bottom: 15px;">أهلاً وسهلاً بكم</h2>
+        <div class="welcome-box">
+            <p>سيتم اختيار <span class="highlight">الفائزين</span>،  واعلانها على صفحات التواصل الاجتماعي فيس بوك وتيكتوك وانستكرام ويرجى الاحتفاظ بالرمز الذي سيظهرلكم عند اكمال تسجيل بياناتكم .</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/dratyafcenters" target="_blank" class="social-btn fb-btn"><i class="fab fa-facebook"></i> فيسبوك</a>
+                <a href="https://www.instagram.com/dr.atyaf_centers/" target="_blank" class="social-btn ig-btn"><i class="fab fa-instagram"></i> إنستغرام</a>
+                <a href="https://www.tiktok.com/@dratyaf_centers" target="_blank" class="social-btn tk-btn"><i class="fab fa-tiktok"></i> تيك توك</a>
+            </div>
+        </div>
+        <button class="btn" onclick="nextPage(2)">الذهاب للتسجيل <i class="fas fa-arrow-left" style="margin-right: 8px;"></i></button>
+    </div>
+
+    <div id="step2" class="page">
+        <h3>معلومات المشترك</h3>
+        <div class="form-group">
+            <label>الاسم الثلاثي:</label>
+            <input type="text" id="userName" placeholder="مثال: محمد علي حسن">
+        </div>
+        <div class="form-group">
+            <label>المحافظة:</label>
+            <select id="userCity">
+                <option value="">اختر المحافظة</option>
+                <option>بغداد</option><option>أربيل</option><option>الأنبار</option>
+                <option>بابل</option><option>البصرة</option><option>حلبجة</option>
+                <option>دهوك</option><option>القادسية</option><option>ديالى</option>
+                <option>ذي قار</option><option>السليمانية</option><option>صلاح الدين</option>
+                <option>كربلاء</option><option>كركوك</option><option>المثنى</option>
+                <option>ميسان</option><option>النجف</option><option>نينوى</option><option>واسط</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>رقم الهاتف:</label>
+            <input type="tel" id="userPhone" placeholder="07XXXXXXXX" dir="ltr">
+        </div>
+        <button id="submitBtn" class="btn" onclick="sendToSheet()">تأكيد الاشتراك</button>
+    </div>
+
+    <div id="step3" class="page">
+        <div style="color: #28a745; font-size: 4rem;"><i class="fas fa-check-circle"></i></div>
+        <h2>تم التسجيل بنجاح</h2>
+        <div class="serial-box">
+            <span style="font-size: 0.9rem;">رقم القرعة الخاص بك:</span>
+            <span id="displaySerial" class="serial-number"></span>
+        </div>
+        <button class="btn" onclick="location.reload()">إغلاق</button>
+    </div>
+</div>
+
+<script>
+    // جلب البيانات المخزنة سابقاً
+    let registeredData = JSON.parse(localStorage.getItem('contestData') || '{"names":[], "phones":[]}');
+
+    function nextPage(step) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById('step' + step).classList.add('active');
+    }
+
+    function generateSerial() {
+        return "AT-" + Math.floor(1000 + Math.random() * 9000);
+    }
+
+    async function sendToSheet() {
+        const nameInput = document.getElementById('userName').value.trim();
+        const city = document.getElementById('userCity').value;
+        const phoneInput = document.getElementById('userPhone').value.trim();
+        const btn = document.getElementById('submitBtn');
+
+        // 1. التحقق من الحقول فارغة
+        if (!nameInput || !city || !phoneInput) {
+            alert("يرجى ملء كافة الحقول");
+            return;
+        }
+
+        // 2. التحقق من أن الاسم ثلاثي (كلمتين بينهما مسافات)
+        const nameParts = nameInput.split(/\s+/);
+        if (nameParts.length < 3) {
+            alert("يرجى كتابة الاسم الثلاثي كاملاً");
+            return;
+        }
+
+        // 3. منع تكرار الاسم أو الرقم
+        if (registeredData.names.includes(nameInput)) {
+            alert("هذا الاسم مسجل مسبقاً!");
+            return;
+        }
+        if (registeredData.phones.includes(phoneInput)) {
+            alert("رقم الهاتف هذا مسجل مسبقاً!");
+            return;
+        }
+
+        const serialCode = generateSerial();
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwGiCmXavgST7xf9kg8yJiJrF2p7MLgYMR8Rb1PH5vddQEViR5D8CCnSz6yixSF3r-iXg/exec';
+
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الحفظ...';
+
+        try {
+            await fetch(scriptURL, { 
+                method: 'POST', 
+                mode: 'no-cors', 
+                body: JSON.stringify({ name: nameInput, city, phone: phoneInput, serial: serialCode }) 
+            });
+
+            // تحديث الذاكرة المحلية لمنع التكرار
+            registeredData.names.push(nameInput);
+            registeredData.phones.push(phoneInput);
+            localStorage.setItem('contestData', JSON.stringify(registeredData));
+
+            document.getElementById('displaySerial').innerText = serialCode;
+            nextPage(3);
+        } catch (e) {
+            alert("حدث خطأ، حاول مرة أخرى");
+            btn.disabled = false;
+            btn.innerText = "تأكيد الاشتراك";
+        }
+    }
+</script>
+
+</body>
+</html>
